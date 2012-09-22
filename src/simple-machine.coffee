@@ -1,9 +1,23 @@
+#       .~~~~~~~~~~~~~~~.
+#      /                 \
+#     .===================.
+#     |                   |
+#     |   .-----------.   |
+#     |   |.,.,.,.,.,.|   |
+#     |   |,.,.,.,.,.,|   |
+#     |   |.,.,.,.,.,.|   |
+#     |   |,.,.,.,.,.,|   |
+#     |   '-----------'   |
+#     |                 O |
+#     |===================|
+#     | ~~~~~~~~~~~~~~~~~ |
+#     |  simple  machine  |
+#     | ~~~~~~~~~~~~~~~~~ |
+#     '==================='
+
 do (root = if typeof('exports') is 'undefined' then window else exports) ->
   class root.SimpleMachine
-    class @InvalidEvent extends Error
-
-    constructor: (@state) ->
-      @transitions = {}
+    constructor: (@state, @transitions = {}) ->
       @callbacks = []
 
     on: (event, callback, context) ->
@@ -14,28 +28,15 @@ do (root = if typeof('exports') is 'undefined' then window else exports) ->
         @callbacks[event].push(callback)
       else
         @callbacks[event] = [callback]
-      
-      this
 
-    when: (event, transitions) ->
-      @transitions[event] = transitions
       this
 
     trigger: (event) ->
-      if @canTrigger(event)
-        @state = @transitions[event][@state]
-        callbacks = @callbacks[@state] + @callbacks['any']
-        callback() for callback in callbacks
-        true
-      else
-        false
+      if event is 'all' or @transitions?[event]?[@state]?
+        return false
 
-    canTrigger: (event) ->
-      throw new SimpleMachine.InvalidEvent unless @transitions[event]?
-      @transitions[event][@state]?
+      @state = @transitions[event][@state]
+      callbacks = @callbacks[@state] + @callbacks['all']
+      callback() for callback in callbacks
 
-    events: ->
-      event for event of @transitions
-
-    in: (other) ->
-      @state is other
+      true
