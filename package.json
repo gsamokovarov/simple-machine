@@ -1,10 +1,10 @@
-{
+ {
   "name": "simple-machine",
   "description": "Simple state machine for Node and the Browser.",
-  "version": "0.0.1", 
+  "version": "0.1.0", 
   "author": "Genadi Samokovarov <gsamokovarov@gmail.com>",
   "keywords": ["state machine", "coffeescript"],
-  "main": "./lib/simple-machine.js", 
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/gsamokovarov/simple-machine.git"
