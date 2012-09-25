@@ -36,7 +36,7 @@ If you are running on [Node][nd], use [NPM][np]:
 If you are running on the Browser, use this [this link][dw].
 
 Usage
-=====
+-----
 
 ```coffeescript
 machine = new SimpleMachine '0',
