@@ -21,13 +21,13 @@ How many lines of code you need for a finite state machine? *16*... of
 [CoffeeScript][cs] that is.
 
 Simple Machine
-==============
+--------------
 
 A a minimal finite state machine implementation for the [Node][nd] and the
 Browser. There is no DSLs and no bloat. Just draw and trigger states.
 
 Installation
-============
+------------
 
 If you are running on [Node][nd], use [NPM][np]:
 
@@ -54,7 +54,7 @@ machine.trigger 'C'
 ```
 
 License
-=======
+-------
 
 Simple machine is licensed under MIT.
 
