@@ -58,7 +58,7 @@ License
 
 Simple machine is licensed under MIT.
 
-[nd]: [http://nodejs.org/]
-[np]: [http://npmjs.org/]
-[cs]: [http://coffeescript.org/]
-[dw]: [https://raw.github.com/gsamokovarov/simple-machine/master/simple-machine.min.js]
+[nd]: http://nodejs.org/
+[np]: http://npmjs.org/
+[cs]: http://coffeescript.org/
+[dw]: https://raw.github.com/gsamokovarov/simple-machine/master/simple-machine.min.js
