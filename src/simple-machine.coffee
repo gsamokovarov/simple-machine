@@ -1,5 +1,5 @@
 #   .~~~~~~~~~~~~~~~.
-#  /  VERSION 0.1.0  \
+#  /  VERSION 0.2.0  \
 # .===================.
 # |                   |
 # |   .-----------.   |
@@ -27,9 +27,9 @@ do (root = if typeof('exports') is 'undefined' then window else exports) ->
 
     trigger: (event) ->
       if @transitions[event]?[@state]? and event isnt 'all'
-        @state = @transitions[event][@state]
+        [previous, @state] = [@state, @transitions[event][@state]]
         for callback in [@callbacks.all].concat(@callbacks[@state])
-          callback?()
+          callback?(previous)
         true
       else
         false

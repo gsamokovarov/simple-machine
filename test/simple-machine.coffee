@@ -1,14 +1,14 @@
 {SimpleMachine} = require '..'
 {expect} = require 'moodswing'
 
-machine = new SimpleMachine '0',
-  A: {'0': 'A', B: 'A', C: 'A'}
-  B: {'0': 'B', C: 'B', A: 'B'}
-  C: {'0': 'C', A: 'C', B: 'C'}
+machine = new SimpleMachine 'S',
+  A: {S: 'A', B: 'A', C: 'A'}
+  B: {S: 'B', C: 'B', A: 'B'}
+  C: {S: 'C', A: 'C', B: 'C'}
 ,
-  A: -> console.log 'A'
-  B: -> console.log 'B'
-  C: -> console.log 'C'
+  A: (previous) -> expect(previous).to be: 'S' 
+  B: (previous) -> expect(previous).to be: 'A'
+  C: (previous) -> expect(previous).to be: 'B'
 
 expect(machine.trigger 'A').to be: true
 expect(machine.trigger 'B').to be: true

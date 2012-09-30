@@ -24,7 +24,7 @@ Simple Machine?
 ===============
 
 A minimal finite state machine implementation for the [Node][nd] and the
-Browser. There is no DSLs and no bloat. Just draw and trigger states.
+Browser. There is no DSLs and no bloat. Just define and trigger states.
 
 Installation
 ------------
@@ -39,10 +39,10 @@ Usage
 -----
 
 ```coffeescript
-machine = new SimpleMachine '0',
-  A: {'0': 'A', B: 'A', C: 'A'}
-  B: {'0': 'B', C: 'B', A: 'B'}
-  C: {'0': 'C', A: 'C', B: 'C'}
+machine = new SimpleMachine 'S',
+  A: {S: 'A', B: 'A', C: 'A'}
+  B: {S: 'B', C: 'B', A: 'B'}
+  C: {S: 'C', A: 'C', B: 'C'}
 ,
   A: -> console.log 'A'
   B: -> console.log 'B'

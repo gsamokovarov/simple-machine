@@ -1,7 +1,7 @@
  {
   "name": "simple-machine",
   "description": "Simple state machine for Node and the Browser.",
-  "version": "0.1.0", 
+  "version": "0.2.0", 
   "author": "Genadi Samokovarov <gsamokovarov@gmail.com>",
   "keywords": ["state machine", "coffeescript"],
   "main": "index.js",
