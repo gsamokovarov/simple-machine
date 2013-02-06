@@ -15,7 +15,7 @@
 # | ~~~~~~~~~~~~~~~~~ |
 # '==================='
 
-do (root = if typeof('exports') is 'undefined' then window else exports) ->
+do (root = if typeof 'exports' is 'undefined' then window else exports) ->
   class root.SimpleMachine
     constructor: (@state, @transitions = {}, @callbacks = {}) ->
 
@@ -23,7 +23,7 @@ do (root = if typeof('exports') is 'undefined' then window else exports) ->
       if context?
         callback = -> callback.call(context)
       @callbacks[event] = [callback].concat(@callbacks[event])
-      this
+      @
 
     trigger: (event) ->
       if @transitions[event]?[@state]? and event isnt 'all'
