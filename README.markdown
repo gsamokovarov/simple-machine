@@ -17,7 +17,7 @@
 '==================='
 ```
 
-How many lines of code you need for a finite state machine? *16*... of
+How many lines of code you need for a finite state machine? *15*... of
 [CoffeeScript][cs] that is.
 
 Simple Machine?
