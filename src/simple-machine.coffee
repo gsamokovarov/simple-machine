@@ -20,8 +20,7 @@ do (root = if typeof 'exports' is 'undefined' then window else exports) ->
     constructor: (@state, @transitions = {}, @callbacks = {}) ->
 
     on: (event, callback, context) ->
-      if context?
-        callback = -> callback.call(context)
+      callback = (-> callback.call context) if context?
       @callbacks[event] = [callback].concat(@callbacks[event])
       @
 
