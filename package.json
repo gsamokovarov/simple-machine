@@ -1,4 +1,4 @@
- {
+{
   "name": "simple-machine",
   "description": "Simple state machine for Node and the Browser.",
   "version": "0.2.0",
