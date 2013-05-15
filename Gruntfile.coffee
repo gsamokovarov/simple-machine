@@ -1,7 +1,5 @@
 module.exports = (grunt) ->
   grunt.initConfig
-    pkg: grunt.file.readJSON 'package.json'
-
     coffee:
       glob_to_multiple:
         expand: true
