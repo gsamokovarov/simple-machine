@@ -7,7 +7,7 @@ do ->
     B: {S: 'B', C: 'B', A: 'B'}
     C: {S: 'C', A: 'C', B: 'C'}
   ,
-    A: (previous) -> expect(previous).to be: 'S' 
+    A: (previous) -> expect(previous).to be: 'S'
     B: (previous) -> expect(previous).to be: 'A'
     C: (previous) -> expect(previous).to be: 'B'
 
