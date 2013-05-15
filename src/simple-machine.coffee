@@ -22,7 +22,7 @@ do (root = if typeof 'exports' is 'undefined' then window else exports) ->
     on: (event, callback, context) ->
       callback = (-> callback.call context) if context?
       @callbacks[event] = [callback].concat(@callbacks[event])
-      @
+      this
 
     trigger: (event) ->
       if @transitions[event]?[@state]? and event isnt 'all'
